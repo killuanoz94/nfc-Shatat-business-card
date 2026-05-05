@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Company Representative - Algeria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a52;
+            --accent: #d4a574;
+            --accent-light: #e8c9a0;
+            --dark: #0f1419;
+            --light: #f8f7f4;
+            --text: #2c3e50;
+            --border: #e0dbd5;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d5a7b 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d5a7b 100%);
+            padding: 40px 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-badge {
+            display: block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 16px 14px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: none;
+        }
+
+        .rep-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .rep-title {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 24px 0;
+        }
+
+        .section {
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 24px;
+            margin-bottom: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding: 12px;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(26, 58, 82, 0.05);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(212, 165, 116, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .contact-content {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent);
+        }
+
+        .company-info {
+            background: rgba(26, 58, 82, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .button-container {
+            padding: 24px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 14px 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d5a7b 100%);
+            color: white;
+            grid-column: 1 / -1;
+        }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 58, 82, 0.3);
+        }
+
+        .btn-save:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .success-toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(39, 174, 96, 0.3);
+            animation: slideIn 0.4s ease-out;
+            z-index: 1000;
+            display: none;
+            font-weight: 500;
+        }
+
+        .success-toast.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .footer {
+            padding: 20px 30px;
+            background: rgba(26, 58, 82, 0.02);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 16px;
+                margin: 10px;
+            }
+
+            .header {
+                padding: 32px 24px;
+            }
+
+            .section {
+                padding: 0 24px;
+            }
+
+            .button-container {
+                padding: 20px 24px;
+            }
+
+            .rep-name {
+                font-size: 24px;
+            }
+
+            .btn {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <span class="company-badge">M Shatat Lab Supplies</span>
+                <h1 class="rep-name">N Faisal</h1>
+                <p class="rep-title">Laboratory Solutions & Supplies</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="divider"></div>
+
+            <h2 class="section-title">📞 Contact Information</h2>
+
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div class="contact-content">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">
+                        <a href="tel:+213796919964">+213 79 691 9964</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-content">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:n.faisal@shatatss.com">n.faisal@shatatss.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-content">
+                    <div class="contact-label">Website</div>
+                    <div class="contact-value">
+                        <a href="https://www.shatatss.com" target="_blank">www.shatatss.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">ℹ️ About Company</h2>
+
+            <div class="company-info">
+                <p class="info-text">
+                    Majd Shatat, based in Amman, Jordan, is a trusted provider of high-quality laboratory consumables and advanced analytical solutions, including HPLC, UHPLC, and GC columns, filters, and reference standards. We stand out for our flexibility and responsiveness, delivering reliable, tailored solutions that meet the highest quality standards for laboratories.
+                </p>
+            </div>
+
+            <h2 class="section-title">📄 Resources</h2>
+
+            <div class="contact-item">
+                <div class="contact-icon">📑</div>
+                <div class="contact-content">
+                    <div class="contact-label">Company Brochure</div>
+                    <div class="contact-value">
+                        <a href="https://drive.google.com/file/d/1ngTe6U7ZOdExQ1L5THZUSfyJrW8LeKiY/view?usp=sharing" target="_blank">Download Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn btn-save" onclick="saveContact()">
+                💾 Save to Contacts
+            </button>
+            <a href="tel:+213796919965" class="btn btn-secondary">Call</a>
+            <a href="mailto:n.faisal@shatat.com" class="btn btn-secondary">Email</a>
+        </div>
+
+        <div class="footer">
+            <p>Professional Business Card · Jordan Representative</p>
+        </div>
+    </div>
+
+    <div class="success-toast" id="successToast">
+        ✓ Contact saved successfully!
+    </div>
+
+    <script>
+        function saveContact() {
+            // Prepare contact information
+            const contact = {
+                firstName: "N",
+                lastName: "Faisal",
+                tel: "+213796919965",
+                email: "n.faisal@shatat.com",
+                organization: "M Shatat Lab Supplies",
+                note: "High-quality laboratory consumables & analytical solutions\nWebsite: www.shatatss.com"
+            };
+
+            // Create vCard format (standard contact format)
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${contact.firstName} ${contact.lastName}
+TEL:${contact.tel}
+EMAIL:${contact.email}
+ORG:${contact.organization}
+NOTE:${contact.note}
+END:VCARD`;
+
+            // Try to save using different methods based on browser/device
+            if (isIOS()) {
+                saveContactIOS(contact, vcard);
+            } else if (isAndroid()) {
+                saveContactAndroid(vcard);
+            } else {
+                saveContactGeneric(vcard);
+            }
+        }
+
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        function isAndroid() {
+            return /Android/.test(navigator.userAgent);
+        }
+
+        function saveContactIOS(contact, vcard) {
+            // iOS: Create and download vCard file
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `${contact.firstName}-${contact.lastName}.vcf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showSuccessMessage();
+        }
+
+        function saveContactAndroid(vcard) {
+            // Android: Use intent to open contact creation
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'contact.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showSuccessMessage();
+        }
+
+        function saveContactGeneric(vcard) {
+            // Generic: Download vCard file
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'contact.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showSuccessMessage();
+        }
+
+        function showSuccessMessage() {
+            const toast = document.getElementById('successToast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Optional: Log to console for debugging
+        console.log('NFC Business Card Page Loaded');
+    </script>
+</body>
+</html>
